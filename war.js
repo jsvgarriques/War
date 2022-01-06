@@ -6,19 +6,21 @@
 //             let card = {Value: values.length}
 
 //     }
-let cardcountComputer=
-let players_deck =document.querySelector("players_deck")
-let computers_card =document.querySelector('computers_card')
-let=document.getElementsByClassName
-let=document.getElementsByClassName
-let = document.getElementsByClassName
-let dropbox = document.getElementsByClassName("dropbox")
-
+let playerCardsArray =[], computerCardsArray = []//testing format
+// -----------computerstuff------------
+const computers_card = document.querySelector('.computers_card')
+const cardsWonComputer= document.querySelector('.cardsWonComputer')
+const cardCountComputer= document.querySelector('.cardCountComputer')
+// ----------playerstuff---------------
+const players_deck = document.querySelector('.players_deck')
+const cardsWonPlayer= document.querySelector('#cardsWonPlayer')
+const cardcountplayer= document.querySelector('#cardcountplayer')
+// ------DECK--------
 const suits = ["♥","♦","♣","♠"];
 const ranks = ['A','2','3','4','5','6','7','8','9','10','J','Q','K'];
 let deck = [];
-let playerHand=[]
-let computerhand=[]
+// let playerHand=playerCards
+// let computerhand=computerCards
 function createDeck() {
     for (let i = 0; i<suits.length; i++) {
         for (let j = 0; j<ranks.length; j++) { 
@@ -27,8 +29,9 @@ function createDeck() {
                 value:j-1})
         }
     }
-    console.log(deck);
-    // shuffle
+     ;
+    // console.log(deck);
+    // ----------shuffleFUNCTION----------
 function shuffleDeck (deck) {
     for(let a =0; a<deck.length; a++) {
         const tempCard = deck[a];
@@ -37,10 +40,8 @@ function shuffleDeck (deck) {
         deck[a] = deck[randomIndex];
         deck[randomIndex] = x
         deck[randomIndex] = tempCard
-        
-    }
-    
-    }shuffleDeck(deck)
+        }
+    }shuffleDeck(deck)//happens inside create deck most be declared in here+ deck isnt global
 };
 
 createDeck()//invoking
@@ -49,27 +50,45 @@ createDeck()//invoking
  
 // pull random card
 function dealCards(){
-    let playerCards = deck.splice(0,26)
-    // pull 2 cards one for the player and one for the comp
-    let computerCards  = deck.splice(0,26)
-    // display cards in the dom
-    // compare cards to see which is higher
-    console.log(playerCards, computerCards);
-    return 
-}
+     let playerCardsArray = deck.splice(0,26)//link to the html of the card count
+    
+     let computerCardsArray  = deck.splice(0,26)//link this to the html of the carcount
+    
+    console.log(playerCardsArray, computerCardsArray );
+// its not stored antwhere 
+ }
+
 document.querySelector('#deal').addEventListener('click', dealCards);
 
-//let playerCard = deck.splice(Math.floor(Math.random()*deck.length),1)[0]DONOTTOUCH TURNOVERCODE
+// function 
+
+function playCard (){
+    const playerWarCards = playerCardsArray[0]
+    console.log(playerWarCards)
+    const computerWarCards = computerCardsArray.shift()//returns top card from an array i think
+    console.log(computerWarCards)
+    }
+    document.querySelector('#pulls_card').addEventListener('click',playCard);
+// if (playerWarCards === computerWarCards) continue;
+// else if(playWarCards > computerWarCards) { }
+
+
+
+
+    //DONOTTOUCH TURNOVERCODE NOT NEEDED
 // pull 2 cards one for the player and one for the comp
 //let playerCard = deck.splice(Math.floor(Math.random()*deck.length),1)[0]
+// let playerCard = deck.splice(Math.floor(Math.random()*deck.length),1)[0]
 // display cards in the dom
 // compare cards to see which is higher
+
+// ---------GAMELOGIC-----------
 // function winsRound () {
 //     if ( playerCard === computerCard) { 
 //         console.log('its War') }  
 //         else if (playerCard < computerCard) {
-//             playerDeck.push //name playing pile
-//         }else (computerCard )
+//             playerDeck.push(playercard, computercard)//name playing pile?
+//         }else { computerDeck.push(playerCard, computercard))}
 
 //     }
 // }
