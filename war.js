@@ -6,15 +6,19 @@
 //             let card = {Value: values.length}
 
 //     }
-let playerCardsArray =[], computerCardsArray = []//testing format
+// -----VARIABLES-----
+let playerCardsArray =[], computerCardsArray = [];//testing format
+let playerWarCard , computerWarCard
+
 // -----------computerstuff------------
 const computers_card = document.querySelector('.computers_card')
 const cardsWonComputer= document.querySelector('.cardsWonComputer')
 const cardCountComputer= document.querySelector('.cardCountComputer')
 // ----------playerstuff---------------
-const players_deck = document.querySelector('.players_deck')
-const cardsWonPlayer= document.querySelector('#cardsWonPlayer')
-const cardcountplayer= document.querySelector('#cardcountplayer')
+let players_deck = document.querySelector('.players_deck')
+let cardsWonPlayer= document.querySelector('.cardsWonPlayer')
+let cardcountplayer= document.querySelector('cardcountplayer')
+
 // ------DECK--------
 const suits = ["♥","♦","♣","♠"];
 const ranks = ['A','2','3','4','5','6','7','8','9','10','J','Q','K'];
@@ -50,12 +54,13 @@ createDeck()//invoking
  
 // pull random card
 function dealCards(){
-     let playerCardsArray = deck.splice(0,26)//link to the html of the card count
+      playerCardsArray = (deck.splice(0,26)) //link to the html of the card count
     
-     let computerCardsArray  = deck.splice(0,26)//link this to the html of the carcount
+      computerCardsArray  = (deck.splice(0,26))//link this to the html of the carcount
+
     
-    console.log(playerCardsArray, computerCardsArray );
-// its not stored antwhere 
+    // console.log(playerCardsArray, playerCards, computerCardsArray, computerCards);
+// its not stored anywhere 
  }
 
 document.querySelector('#deal').addEventListener('click', dealCards);
@@ -63,11 +68,22 @@ document.querySelector('#deal').addEventListener('click', dealCards);
 // function 
 
 function playCard (){
-    const playerWarCards = playerCardsArray[0]
-    console.log(playerWarCards)
-    const computerWarCards = computerCardsArray.shift()//returns top card from an array i think
-    console.log(computerWarCards)
-    }
+    playerWarCard = playerCardsArray.shift()
+    console.log(playerWarCard)
+    computerWarCard = computerCardsArray.shift()//returns top card from an array i think
+    console.log(computerWarCard.suit) 
+    document.querySelector('.cardsWonComputer').innerText=computerCardsArray.length;
+    document.querySelector('.cardsWonPlayer').innerText=playerCardsArray.length;
+    document.querySelector('#crank').innerText=computerWarCard.rank;
+    document.querySelector('#prank').innerText=playerWarCard.rank;
+    document.querySelector("#csuit").innerText=computerWarCard.suit;
+    document.querySelector('#psuit').innerText=playerWarCard.suit;
+   console.log(playerWarCard.suit)
+}
+//    -----player stuff-----
+
+   
+ 
     document.querySelector('#pulls_card').addEventListener('click',playCard);
 // if (playerWarCards === computerWarCards) continue;
 // else if(playWarCards > computerWarCards) { }
@@ -84,7 +100,7 @@ function playCard (){
 
 // ---------GAMELOGIC-----------
 // function winsRound () {
-//     if ( playerCard === computerCard) { 
+//     if ( playerWarCard === computerWarCard) { 
 //         console.log('its War') }  
 //         else if (playerCard < computerCard) {
 //             playerDeck.push(playercard, computercard)//name playing pile?

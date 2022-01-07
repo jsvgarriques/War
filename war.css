@@ -49,52 +49,116 @@ button {
 .computerelements { 
     flex-direction: row;
     border:#ffffff 1px solid;
-    height: 300px;
+    height: 350px;
     border-radius: 3px;
 }
 .cardsWonComputer { 
+    display: grid;
     border:2px rgb(255, 255, 255) solid;
     height: 100px;
     width: 150px;
     margin: 5px;
     background-color: #11753b;
     border-radius: 3px;
-    
+    color: #ffffff;
+    font-size: 30px;
+    padding: 10px;
+    align-content: center;
+    justify-content: center;
+    font-size: 50px;
+}
+.psuit  { 
+    color: #ffffff;
+    justify-items: center;
+    margin: 0 auto;
+    font-size: 50px;
+}
+#crank {
+
+    padding: 10px;
+    color: #ffffff;
+    font-size: 25px;
+}
+#csuit  { 
+    color: #ffffff;
+    justify-items: center;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    font-size: 50px;
+}
+#prank {
+    padding: 10px;
+    color: #ffffff;
+    font-size: 25px;
+    height: 20px;
+}
+#psuit  { 
+    color: #ffffff;
+    justify-items: center;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    font-size: 50px;
 }
 .computers_card { display: grid;
     border:2px rgb(255, 255, 255) solid;
-    height: 100px;
-    width: 150px;
+    height: 150px;
+    width: 100px;
     margin: 5px;
     background-color: #11753b;
     border-radius: 3px;
-
+    margin: 10px;
+    padding: 10px;
+    color: #ffffff;
+    font-size: 25px;
 }
 .playerelements {
     flex-direction: row;
     border:#ffffff 1px solid;
-    height: 300px;
+    height: 350px;
     border-radius: 3px;
 }
-#players_deck { display: grid;
+.displayboxPlayer{
+    color: #ffffff;
+    display: grid;
+    justify-content: center;
+    margin: 5px;
+
+}
+.displayboxcomputer {
+    color: #ffffff;
+    display: grid;
+    justify-content: center;
+    margin: 5px;
+
+}
+.players_card { display: grid;
+    border:2px rgb(255, 255, 255) solid;
+    height: 150px;
+    width: 100px;
+    margin: 5px;
+    background-color: #11753b;
+    border-radius: 3px;
+    margin: 10px;
+    padding: 10px;
+    color: #ffffff;
+    font-size: 25px;
+}
+.cardsWonPlayer {  display: grid;
     border:2px rgb(255, 255, 255) solid;
     height: 100px;
     width: 150px;
     margin: 5px;
     background-color: #11753b;
     border-radius: 3px;
-}
-#cardsWonPlayer { 
-    border:2px rgb(255, 255, 255) solid;
-    height: 100px;
-    width: 150px;
-    margin: 5px;
-    background-color: #11753b;
-    border-radius: 3px;
+    color: #ffffff;
+    font-size: 30px;
+    padding: 10px;
+    align-content: center;
+    justify-content: center;
+    font-size: 50px;
+
 }
     
-  
-
 .dropbox { 
     display: grid;
     justify-content: center;
@@ -102,21 +166,19 @@ button {
     text-align: center;
     border: red 1px solid;
     height: 400px;
-    width: 200px;
+    width: 300px;
     align-content: space-evenly;
 }
-#compWarCard {
+#Displaybox{
+
+    display: grid;
     border: purple 1px solid;
     height: 100px;
-    width: 100px;
+    width: 250px;
     color: #ffffff;
-}
+    justify-self: center;
+    margin: 0 auto;
 
-#playerWarCard { 
-    border: rgb(0, 51, 128) 1px solid;
-    height: 100px;
-    width: 100px;
-    color: #ffffff;
 }
 #RESTART{
     justify-content: center;

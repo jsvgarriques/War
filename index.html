@@ -15,34 +15,35 @@
     <div>
         <div class= 'Table'>
             <div class= 'computerelements'> 
-                <section class='displayboxcomputer'> Computer's card </section>
-                    <div class='computers_card'></div>
+                <div class='displayboxcomputer'> Computer's card </div>
+                    <div class='computers_card'>
+                        <div id='crank'>7</div> 
+                        <div id='csuit'>♥</div> 
+                    </div>
                     <div class='cardsWonComputer'>26</div>
-                    <div id= 'cardCountComputer'>&spades; Cards Remaining:<span>" "</span></div>
-                    
                     
             </div>  
                      
                 <div class='dropbox'>
-                    <cell id='compWarCard'></cell>
-                    <cell id='playerWarCard'>
-                        <div class= 'card' data-value ='10♦' >
-                            
-                        </div>
-                    </cell>
-                    <button id ='deal'>deal</button>
+                    <cell id='Displaybox'></cell>
+                    
+                    <button id ='deal'>Deal</button>
                 </div>
                
             <div class= 'playerelements'> 
-                
-                     <div id='players_deck'></div>
-                        <div id='cardsWonPlayer'>26</div>
-                        <section class='displayboxPlayer'></section>
-                        <div id= 'cardcountplayer'>&spades; Cards Remaining:<span>" "</span></div>
+                <section class='displayboxPlayer'>Player's Card</section>
+                     <div class='players_card'>
+                        <div id='prank'>7</div> 
+                        <div id='psuit'>♥</div> 
+                    </div>
+                        <div class='cardsWonPlayer'>26</div>
+                        
+                        
                         <button id='pulls_card'>TurnOver</button>
         
             </div>
     </div>
    <button id='RESTART'>RESTART</button>
 </body>
+
 </html>
