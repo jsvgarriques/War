@@ -8,8 +8,10 @@
 //     }
 // -----VARIABLES-----
 let playerCardsArray =[], computerCardsArray = [];//testing format
-let playerWarCard , computerWarCard
-
+let playerWarCard , computerWarCard;
+let playerDiscardPile =[], computerDiscardPile=[];
+// -----declare global function-----
+pullFromDiscard();
 // -----------computerstuff------------
 const computers_card = document.querySelector('.computers_card')
 const cardsWonComputer= document.querySelector('.cardsWonComputer')
@@ -18,7 +20,11 @@ const cardCountComputer= document.querySelector('.cardCountComputer')
 let players_deck = document.querySelector('.players_deck')
 let cardsWonPlayer= document.querySelector('.cardsWonPlayer')
 let cardcountplayer= document.querySelector('cardcountplayer')
-
+// ---------querySelector-------
+let computerRank=  document.querySelector('#crank')
+let playerRank= document.querySelector('#prank')
+let computerSuit = document.querySelector("#csuit")
+let playerSuit= document.querySelector('#psuit')
 // ------DECK--------
 const suits = ["♥","♦","♣","♠"];
 const ranks = ['A','2','3','4','5','6','7','8','9','10','J','Q','K'];
@@ -50,43 +56,65 @@ function shuffleDeck (deck) {
 
 createDeck()//invoking
 // let shuffledDeck = createDeck()
-
- 
-// pull random card
+// --------SPLITS DECK AND DEALS CARDS-------
 function dealCards(){
       playerCardsArray = (deck.splice(0,26)) //link to the html of the card count
-    
       computerCardsArray  = (deck.splice(0,26))//link this to the html of the carcount
-
-    
     // console.log(playerCardsArray, playerCards, computerCardsArray, computerCards);
 // its not stored anywhere 
  }
 
 document.querySelector('#deal').addEventListener('click', dealCards);
-
-// function 
-
+// -----operatesTurnOverButton-----
+// makes sure html is updated with current board status
 function playCard (){
+    if (playerCardsArray.length !==0 && computerCardsArray.length !== 0 ){
     playerWarCard = playerCardsArray.shift()
-    console.log(playerWarCard)
-    computerWarCard = computerCardsArray.shift()//returns top card from an array i think
-    console.log(computerWarCard.suit) 
-    document.querySelector('.cardsWonComputer').innerText=computerCardsArray.length;
-    document.querySelector('.cardsWonPlayer').innerText=playerCardsArray.length;
-    document.querySelector('#crank').innerText=computerWarCard.rank;
-    document.querySelector('#prank').innerText=playerWarCard.rank;
-    document.querySelector("#csuit").innerText=computerWarCard.suit;
-    document.querySelector('#psuit').innerText=playerWarCard.suit;
-   console.log(playerWarCard.suit)
+    // console.log(playerWarCard)
+    computerWarCard = computerCardsArray.shift()//returns top card from an array I think
+    // console.log(computerWarCard.suit) 
+    cardsWonComputer.innerText=computerCardsArray.length;
+    cardsWonPlayer.innerText=playerCardsArray.length;
+    computerRank.innerText=computerWarCard.rank;
+    playerRank.innerText=playerWarCard.rank;
+    computerSuit.innerText=computerWarCard.suit;
+    playerSuit.innerText=playerWarCard.suit;
+    // console.log(playerWarCard.suit)
+    compareCards()
+    winnerOfGame() 
+    } else pullFromDiscard();
 }
-//    -----player stuff-----
 
-   
- 
-    document.querySelector('#pulls_card').addEventListener('click',playCard);
-// if (playerWarCards === computerWarCards) continue;
-// else if(playWarCards > computerWarCards) { }
+document.querySelector('#pulls_card').addEventListener('click',playCard);
+// --------winnerOfTurn-------
+function compareCards() {
+    console.log(playerDiscardPile)
+    if ( playerWarCard.value > computerWarCard.value) {
+            playerDiscardPile.push(playerWarCard, computerWarCard),
+                console.log('player wins', playerDiscardPile);
+    } 
+        else if (computerWarCard.value > playerWarCard.value) { 
+            computerDiscardPile.push(playerWarCard, computerWarCard),
+            console.log('computer wins', computerDiscardPile);
+    }
+    //  go to war
+};
+// -----pullFromDiscardPile-----
+function pullFromDiscard() { 
+        playerCardsArray = playerDiscardPile.slice(0, playerDiscardPile.length)
+        // need to pop from discard pile
+        computerCardsArray = computerDiscardPile.slice(0, computerDiscardPile.length)
+};
+
+// ----winnerOfGame----
+function winnerOfGame() {
+    if (playerDiscardPile === 0 && playerCardsArray === 0 ){
+        console.log( "Game Over Computer Wins!" )
+        } else if (computerDiscardPile === 0 && computerCardsArray === 0 ){
+            console.log('You are Victorious!');
+    }
+};
+
 
 
 
@@ -126,3 +154,4 @@ function playCard (){
 //function recieve cards after victory
 // player discard pile
 // computer discard pile
+// Initialising the canvas
