@@ -7,40 +7,74 @@ h1 {
    margin: 0 auto;
    margin-bottom: 50px;
    width: 600px;
+   box-shadow: 
+    0 0 7px #ffffff,
+    0 0 15px rgb(255, 255, 255),
+    0 0 25px rgb(255, 255, 255),
+    0 0 40px rgb(0, 191, 255);
 }
 body {
-    background-color: #11753b;
+    background-color: #000000;
     display: grid;
     justify-content: space-evenly;
     align-items: center;
     margin-top:50px;
-
-
 }
 .Table {
     display: flex;
-    background-color: #11753b;
-   border: rgb(247, 236, 83) 2px solid;
+    background-color: transparent;
+   border: 1 px #fff;
+   border-radius: 3px;
    height: 400px;
    width: 800px;
    justify-content: space-between;
    padding: 50px;
+   color: #fff;
+   text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px rgb(0, 225, 255),
+    0 0 82px rgb(0, 225, 255);
+    box-shadow: 
+    0 0 7px #ffffff,
+    0 0 15px rgb(255, 255, 255),
+    0 0 25px rgb(255, 255, 255),
+    0 0 40px rgb(0, 191, 255);
 }
-
 button { 
     display: grid;
-    background-color: #ffffff; 
-    border-color:  #11753b;;
-    color: #11753b;;;
+    background-color:transparent; 
+    color: #ffffff;
     text-align: center;
     text-justify: center;
     text-decoration: none;
-    border-radius: 3px;
     height: 30px;
     width: 100px;
     margin: 0 auto;
     cursor: pointer;
     align-items: center;
+    border: #ffffff 1px solid
+}
+#pulls_card { margin-top: 40px;
+}
+#Restart {
+   
+}
+button:hover  {
+    box-shadow: 0 0 7px #ffffff;
+    color: #0bddec;
+    border: 1px solid #0bddec;
+    ;
+}
+button:active {
+    transform:translateY(5px) ;
+    box-shadow: 0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px rgb(0, 225, 255),
+    0 0 82px rgb(0, 225, 255),
+    0 0 92px rgb(0, 225, 255);
 }
 .deal {
     justify-content: center;
@@ -48,17 +82,17 @@ button {
 }
 .computerelements { 
     flex-direction: row;
-    border:#ffffff 1px solid;
     height: 350px;
     border-radius: 3px;
+    border: 1px #fff solid;
 }
 .cardsWonComputer { 
     display: grid;
-    border:2px rgb(255, 255, 255) solid;
+    /* border:1px rgb(255, 255, 255) solid; */
     height: 100px;
     width: 150px;
     margin: 5px;
-    background-color: #11753b;
+    background-color: none;
     border-radius: 3px;
     color: #ffffff;
     font-size: 30px;
@@ -66,6 +100,7 @@ button {
     align-content: center;
     justify-content: center;
     font-size: 50px;
+    
 }
 .psuit  { 
     color: #ffffff;
@@ -74,8 +109,7 @@ button {
     font-size: 50px;
 }
 #crank {
-
-    padding: 10px;
+    padding: 5px;
     color: #ffffff;
     font-size: 25px;
 }
@@ -84,10 +118,10 @@ button {
     justify-items: center;
     margin: 0 auto;
     padding-bottom: 20px;
-    font-size: 50px;
+    font-size: 75px;
 }
 #prank {
-    padding: 10px;
+    padding: 5px;
     color: #ffffff;
     font-size: 25px;
     height: 20px;
@@ -97,58 +131,83 @@ button {
     justify-items: center;
     margin: 0 auto;
     padding-bottom: 20px;
-    font-size: 50px;
+    font-size: 75px;
 }
-.computers_card { display: grid;
-    border:2px rgb(255, 255, 255) solid;
+.computers_card { 
+    display: grid;
+    border:1px #ffffff solid;
     height: 150px;
     width: 100px;
     margin: 5px;
-    background-color: #11753b;
+    background-color: #000000;
     border-radius: 3px;
-    margin: 10px;
+    margin: 0 auto;
     padding: 10px;
     color: #ffffff;
     font-size: 25px;
+   
+    box-shadow: 
+    0 0 7px #ffffff,
+    0 0 15px rgb(255, 255, 255),
+    0 0 20px rgb(0, 191, 255)
 }
-.playerelements {
+.playerelements { 
     flex-direction: row;
     border:#ffffff 1px solid;
     height: 350px;
     border-radius: 3px;
+    align-content: center;
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px rgb(0, 225, 255),
+    0 0 82px rgb(0, 225, 255);
+    /* box-shadow: 
+    0 0 7px #ffffff,
+    0 0 15px rgb(255, 255, 255),
+    0 0 25px rgb(255, 255, 255),
+    0 0 40px rgb(0, 191, 255); */
 }
 .displayboxPlayer{
     color: #ffffff;
     display: grid;
     justify-content: center;
     margin: 5px;
-
+    color: #fff;
+ 
 }
 .displayboxcomputer {
-    color: #ffffff;
+    color: #0bddec;
     display: grid;
     justify-content: center;
     margin: 5px;
-
 }
-.players_card { display: grid;
-    border:2px rgb(255, 255, 255) solid;
+.players_card { 
+    display: grid;
+    border:1px rgb(255, 255, 255) solid;
     height: 150px;
     width: 100px;
     margin: 5px;
-    background-color: #11753b;
+    background-color: #000000;
     border-radius: 3px;
-    margin: 10px;
+    margin: 0 auto;
     padding: 10px;
     color: #ffffff;
     font-size: 25px;
+    box-shadow: 
+    0 0 7px #ffffff,
+    0 0 15px rgb(255, 255, 255),
+    0 0 20px rgb(0, 191, 255);
+    
 }
-.cardsWonPlayer {  display: grid;
-    border:2px rgb(255, 255, 255) solid;
+.cardsWonPlayer {  
+    display: grid;
+    /* border:1px rgb(255, 255, 255) solid; */
     height: 100px;
     width: 150px;
     margin: 5px;
-    background-color: #11753b;
+    background-color: none;
     border-radius: 3px;
     color: #ffffff;
     font-size: 30px;
@@ -156,30 +215,41 @@ button {
     align-content: center;
     justify-content: center;
     font-size: 50px;
-
 }
-    
-.dropbox { 
+.center_box { 
     display: grid;
     justify-content: center;
     align-content: center;
     text-align: center;
     border: red 1px solid;
-    height: 400px;
+    height: 430px;
     width: 300px;
-    align-content: space-evenly;
-}
-#Displaybox{
+    align-content:space-evenly;
 
+}
+#Displaybox {
     display: grid;
     border: purple 1px solid;
     height: 100px;
     width: 250px;
     color: #ffffff;
     justify-self: center;
+    align-content: center;
     margin: 0 auto;
-
+    font-size: 30px;
 }
+#gameStatus {
+    display: grid;
+    border: purple 1px solid;
+    height: 100px;
+    width: 250px;
+    color: #ffffff;
+    justify-self: center;
+    align-content: center;
+    margin: 0 auto;
+    font-size: 30px;
+}
+
 #RESTART{
     justify-content: center;
 }
