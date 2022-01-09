@@ -10,16 +10,22 @@
 let playerCardsArray =[], computerCardsArray = [];//testing format
 let playerWarCard , computerWarCard;
 let playerDiscardPile =[], computerDiscardPile=[];
+// ---------button--------
+const restartButton= document.querySelector('#Restart')
+const playsCardButton = document.querySelector('#pulls_card')
+const dealsCardButton = document.querySelector("#deal")
 // -----declare global function-----
 pullFromDiscard();
 // -----------computerstuff------------
 const computers_card = document.querySelector('.computers_card')
 const cardsWonComputer= document.querySelector('.cardsWonComputer')
 const cardCountComputer= document.querySelector('.cardCountComputer')
+const computerElementsBox = document.querySelector('computerelements')
 // ----------playerstuff---------------
 let players_deck = document.querySelector('.players_deck')
 let cardsWonPlayer= document.querySelector('.cardsWonPlayer')
 let cardcountplayer= document.querySelector('cardcountplayer')
+let playerElementsBox = document.querySelector('playerelements')
 // ---------gamestatusbox------------
 let gameStatus = document.querySelector('#gameStatus')
 // ---------querySelector------------
@@ -67,7 +73,7 @@ function dealCards(){
 // its not stored anywhere 
  }
 
-document.querySelector('#deal').addEventListener('click', dealCards);
+dealsCardButton.addEventListener('click', dealCards);
 // -----operatesTurnOverButton-----
 // makes sure html is updated with current board status
 function playCard (){
@@ -90,14 +96,13 @@ function playCard (){
     }
 }
 // --------connectToButton--------
-document.querySelector('#pulls_card').addEventListener('click',playCard);
+playsCardButton.addEventListener('click',playCard);
 // --------winnerOfTurn-------
 function compareCards() {
     // console.log(playerDiscardPile)
     if ( playerWarCard.value > computerWarCard.value) {
             playerDiscardPile.push(playerWarCard, computerWarCard), gameStatus.innerText = "Player Wins!!!"
                 // console.log(playerDiscardPile)
-                ;
     } 
         else if (computerWarCard.value > playerWarCard.value) { 
             computerDiscardPile.push(playerWarCard, computerWarCard), gameStatus.innerText="Computer Wins!!!"

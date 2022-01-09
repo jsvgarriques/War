@@ -47,7 +47,6 @@ body {
     width: 800px;
     justify-content: space-between;
     padding: 50px;
-    color: #fff;
     /* text-shadow:
         0 0 7px #fff,
         0 0 10px #fff,
@@ -111,6 +110,11 @@ button:active {
     0 0 42px #ffffff,
     0 0 82px #ffffff;
     border: 1px black solid;
+    box-shadow: 
+    0 0 7px #ffffff,
+    0 0 15px rgb(255, 255, 255),
+    0 0 25px rgb(255, 255, 255),
+    0 0 30px red;
 }
 .cardsWonComputer { 
     display: grid;
@@ -189,7 +193,7 @@ button:active {
 }
 .playerelements { 
     flex-direction: row;
-    border:black 1px solid;
+    border:#fff 1px solid;
     height: 350px;
     border-radius: 3px;
     align-content: center;
@@ -199,11 +203,11 @@ button:active {
     0 0 21px #fff,
     0 0 42px rgb(0, 225, 255),
     0 0 82px rgb(0, 225, 255);
-    /* box-shadow: 
+    box-shadow: 
     0 0 7px #ffffff,
     0 0 15px rgb(255, 255, 255),
     0 0 25px rgb(255, 255, 255),
-    0 0 40px rgb(0, 191, 255); */
+    0 0 30px rgb(0, 191, 255);
 }
 .displayboxPlayer{
     color: black;
@@ -221,7 +225,7 @@ button:active {
 }
 .players_card { 
     display: grid;
-    border:2px black solid;
+    border:2px #fff solid;
     height: 150px;
     width: 100px;
     margin: 5px;
@@ -287,18 +291,12 @@ button:active {
     align-content: center;
     margin: 0 auto;
     font-size: 30px;
-    color: #fff;
-    /* text-shadow:
-        0 0 7px #fff,
-        0 0 10px #fff,
-        0 0 21px #fff,
-        0 0 42px rgb(0, 225, 255),
-        0 0 82px rgb(0, 225, 255); */
+    color: black;
     text-shadow: 
     0 0 7px #ffffff,
-    0 0 15px rgb(255, 255, 255),
-    0 0 25px rgb(255, 255, 255),
-    0 0 40px rgb(0, 191, 255);
+    0 0 15px #ffffff,
+    0 0 25px #ffffff,
+    0 0 40px #ffffff;
 }
 /* #deal{
     
@@ -306,7 +304,7 @@ button:active {
 #deal:hover  {
     box-shadow: 
     0 0 7px #ffffff,
-    0 0 15px rgb(255, 255, 255),
+    0 0 15px r#ffffff,
     0 0 20px rgb(0, 191, 255);
     border: 1px solid #fff;
 }
