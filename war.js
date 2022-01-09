@@ -20,12 +20,14 @@ const cardCountComputer= document.querySelector('.cardCountComputer')
 let players_deck = document.querySelector('.players_deck')
 let cardsWonPlayer= document.querySelector('.cardsWonPlayer')
 let cardcountplayer= document.querySelector('cardcountplayer')
-// ---------querySelector-------
+// ---------gamestatusbox------------
+let gameStatus = document.querySelector('#gameStatus')
+// ---------querySelector------------
 let computerRank=  document.querySelector('#crank')
 let playerRank= document.querySelector('#prank')
 let computerSuit = document.querySelector("#csuit")
 let playerSuit= document.querySelector('#psuit')
-// ------DECK--------
+// -------------DECK------------
 const suits = ["♥","♦","♣","♠"];
 const ranks = ['A','2','3','4','5','6','7','8','9','10','J','Q','K'];
 let deck = [];
@@ -59,7 +61,8 @@ createDeck()//invoking
 // --------SPLITS DECK AND DEALS CARDS-------
 function dealCards(){
       playerCardsArray = (deck.splice(0,26)) //link to the html of the card count
-      computerCardsArray  = (deck.splice(0,26))//link this to the html of the carcount
+      computerCardsArray  = (deck.splice(0,26))
+      gameStatus.innerText = "Play a card"//link this to the html of the carcount
     // console.log(playerCardsArray, playerCards, computerCardsArray, computerCards);
 // its not stored anywhere 
  }
@@ -68,7 +71,7 @@ document.querySelector('#deal').addEventListener('click', dealCards);
 // -----operatesTurnOverButton-----
 // makes sure html is updated with current board status
 function playCard (){
-    if (playerCardsArray.length !==0 && computerCardsArray.length !== 0 ){
+    if (playerCardsArray.length !== 0 && computerCardsArray.length !== 0 ){
     playerWarCard = playerCardsArray.shift()
     // console.log(playerWarCard)
     computerWarCard = computerCardsArray.shift()//returns top card from an array I think
@@ -81,37 +84,45 @@ function playCard (){
     playerSuit.innerText=playerWarCard.suit;
     // console.log(playerWarCard.suit)
     compareCards()
-    winnerOfGame() 
-    } else pullFromDiscard();
+    } else {
+     pullFromDiscard();
+     winnerOfGame();
+    }
 }
-
+// --------connectToButton--------
 document.querySelector('#pulls_card').addEventListener('click',playCard);
 // --------winnerOfTurn-------
 function compareCards() {
-    console.log(playerDiscardPile)
+    // console.log(playerDiscardPile)
     if ( playerWarCard.value > computerWarCard.value) {
-            playerDiscardPile.push(playerWarCard, computerWarCard),
-                console.log('player wins', playerDiscardPile);
+            playerDiscardPile.push(playerWarCard, computerWarCard), gameStatus.innerText = "Player Wins!!!"
+                // console.log(playerDiscardPile)
+                ;
     } 
         else if (computerWarCard.value > playerWarCard.value) { 
-            computerDiscardPile.push(playerWarCard, computerWarCard),
-            console.log('computer wins', computerDiscardPile);
-    }
-    //  go to war
+            computerDiscardPile.push(playerWarCard, computerWarCard), gameStatus.innerText="Computer Wins!!!"
+            // console.log(computerDiscardPile)
+            ;
+    } else {
+            gameStatus.innerText = "It's Draw";
+            playerDiscardPile.push(playerWarCard); computerDiscardPile.push(computerWarCard)//draw means each card goes to respective discard pile
+        }
+    
 };
-// -----pullFromDiscardPile-----
+// --------pullFromDiscardPile--------
 function pullFromDiscard() { 
-        playerCardsArray = playerDiscardPile.slice(0, playerDiscardPile.length)
-        // need to pop from discard pile
-        computerCardsArray = computerDiscardPile.slice(0, computerDiscardPile.length)
-};
+    if (playerDiscardPile !== 0 && computerDiscardPile !== 0) {
+            playerCardsArray = playerDiscardPile.splice(0, playerDiscardPile.length) //playerCardsArray = (deck.splice(0,26))
+            computerCardsArray = computerDiscardPile.splice(0, computerDiscardPile.length)
+        } winnerOfGame();
+    };
 
-// ----winnerOfGame----
+// -------winnerOfGame-------
 function winnerOfGame() {
     if (playerDiscardPile === 0 && playerCardsArray === 0 ){
-        console.log( "Game Over Computer Wins!" )
+        gameStatus.innerText = "Game Over Computer Wins!"
         } else if (computerDiscardPile === 0 && computerCardsArray === 0 ){
-            console.log('You are Victorious!');
+            gameStatus.innerText = "You are Victorious!";
     }
 };
 

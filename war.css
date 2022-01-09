@@ -1,20 +1,38 @@
-h1 {
-    font-family:'Times New Roman', Times, serif;
+html {
+    background-image: url(/Users/jay/sei/projects/WAR/Images/warimage.jpeg);
+    background-size: cover;
+}
+.topBar { 
     color: #ffffff;
     text-align: center;
     justify-content: center;
     border: 2px solid #ffffff;
-   margin: 0 auto;
-   margin-bottom: 50px;
-   width: 600px;
-   box-shadow: 
-    0 0 7px #ffffff,
-    0 0 15px rgb(255, 255, 255),
-    0 0 25px rgb(255, 255, 255),
-    0 0 40px rgb(0, 191, 255);
+    margin: 0 auto;
+    margin-bottom: 50px;
+    width: 600px;
+    box-shadow: 
+        0 0 7px #ffffff,
+        0 0 15px #ffffff,
+        0 0 25px #ffffff,
+        0 0 40px #ffffff;
+}
+.bottomBar { 
+    color: #ffffff;
+    text-align: center;
+    justify-content: center;
+    border: 2px solid #ffffff;
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 600px;
+    box-shadow: 
+        0 0 7px #ffffff,
+        0 0 15px #ffffff
+        0 0 25px #ffffff
+        0 0 40px #ffffff;
 }
 body {
-    background-color: #000000;
+    align-content: space-evenly;
+    background-color: transparent;
     display: grid;
     justify-content: space-evenly;
     align-items: center;
@@ -23,24 +41,24 @@ body {
 .Table {
     display: flex;
     background-color: transparent;
-   border: 1 px #fff;
-   border-radius: 3px;
-   height: 400px;
-   width: 800px;
-   justify-content: space-between;
-   padding: 50px;
-   color: #fff;
-   text-shadow:
-    0 0 7px #fff,
-    0 0 10px #fff,
-    0 0 21px #fff,
-    0 0 42px rgb(0, 225, 255),
-    0 0 82px rgb(0, 225, 255);
+    border: 2px black solid;
+    border-radius: 3px;
+    height: 400px;
+    width: 800px;
+    justify-content: space-between;
+    padding: 50px;
+    color: #fff;
+    /* text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px rgb(0, 225, 255),
+        0 0 82px rgb(0, 225, 255); */
     box-shadow: 
     0 0 7px #ffffff,
-    0 0 15px rgb(255, 255, 255),
-    0 0 25px rgb(255, 255, 255),
-    0 0 40px rgb(0, 191, 255);
+    0 0 15px #ffffff,
+    0 0 25px #ffffff,
+    0 0 40px #ffffff;
 }
 button { 
     display: grid;
@@ -56,33 +74,43 @@ button {
     align-items: center;
     border: #ffffff 1px solid
 }
-#pulls_card { margin-top: 40px;
+#pulls_card { 
+    margin-top: 40px;
 }
-
 button:hover  {
-    box-shadow: 0 0 7px #ffffff;
-    color: #0bddec;
-    border: 1px solid #0bddec;
-    ;
+    text-shadow: 
+    0 0 7px #ffffff,
+    0 0 15px rgb(255, 255, 255),
+    0 0 20px rgb(0, 191, 255);
+    box-shadow: 
+    0 0 7px #ffffff,
+    0 0 15px rgb(255, 255, 255),
+    0 0 20px rgb(0, 191, 255);
+    border: 1px solid #fff;
 }
 button:active {
     transform:translateY(5px) ;
-    box-shadow: 0 0 7px #fff,
+    box-shadow: 0 0 20px #fff,
     0 0 10px #fff,
     0 0 21px #fff,
-    0 0 42px rgb(0, 225, 255),
-    0 0 82px rgb(0, 225, 255),
-    0 0 92px rgb(0, 225, 255);
+    0 0 42px #fff,
+    0 0 82px rgb(0, 225, 255)
 }
-.deal {
+/* .deal {
     justify-content: center;
     align-content: left;
-}
+} */
 .computerelements { 
     flex-direction: row;
     height: 350px;
     border-radius: 3px;
-    border: 1px #fff solid;
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #ffffff,
+    0 0 82px #ffffff;
+    border: 1px black solid;
 }
 .cardsWonComputer { 
     display: grid;
@@ -92,13 +120,16 @@ button:active {
     margin: 5px;
     background-color: none;
     border-radius: 3px;
-    color: #ffffff;
+    color: black;
     font-size: 30px;
     padding: 10px;
     align-content: center;
     justify-content: center;
     font-size: 50px;
-    
+    text-shadow: 
+        0 0 7px #ffffff,
+        0 0 15px #ffffff,
+        0 0 20px #fa0000;
 }
 .psuit  { 
     color: #ffffff;
@@ -108,11 +139,19 @@ button:active {
 }
 #crank {
     padding: 5px;
-    color: #ffffff;
+    color: black;
+    text-shadow: 
+        0 0 7px #ffffff,
+        0 0 15px #fa0000,
+        0 0 20px #fa0000;
     font-size: 25px;
 }
 #csuit  { 
-    color: #ffffff;
+    color: black;
+    text-shadow: 
+        0 0 7px #ffffff,
+        0 0 15px #ffffff,
+        0 0 20px #fa0000;;
     justify-items: center;
     margin: 0 auto;
     padding-bottom: 20px;
@@ -133,25 +172,24 @@ button:active {
 }
 .computers_card { 
     display: grid;
-    border:1px #ffffff solid;
+    border: 2px black solid;
     height: 150px;
     width: 100px;
     margin: 5px;
-    background-color: #000000;
+    background-color: transparent;
     border-radius: 3px;
     margin: 0 auto;
     padding: 10px;
-    color: #ffffff;
-    font-size: 25px;
-   
+    color: #fff;
+    font-size: 25px;   
     box-shadow: 
     0 0 7px #ffffff,
-    0 0 15px rgb(255, 255, 255),
-    0 0 20px rgb(0, 191, 255)
+    0 0 15px #ffffff,
+    0 0 20px #fa0000
 }
 .playerelements { 
     flex-direction: row;
-    border:#ffffff 1px solid;
+    border:black 1px solid;
     height: 350px;
     border-radius: 3px;
     align-content: center;
@@ -168,26 +206,26 @@ button:active {
     0 0 40px rgb(0, 191, 255); */
 }
 .displayboxPlayer{
-    color: #ffffff;
+    color: black;
     display: grid;
     justify-content: center;
     margin: 5px;
-    color: #fff;
+    
  
 }
 .displayboxcomputer {
-    color: #0bddec;
+    color: black;
     display: grid;
     justify-content: center;
     margin: 5px;
 }
 .players_card { 
     display: grid;
-    border:1px rgb(255, 255, 255) solid;
+    border:2px black solid;
     height: 150px;
     width: 100px;
     margin: 5px;
-    background-color: #000000;
+    background-color: transparent;
     border-radius: 3px;
     margin: 0 auto;
     padding: 10px;
@@ -197,7 +235,6 @@ button:active {
     0 0 7px #ffffff,
     0 0 15px rgb(255, 255, 255),
     0 0 20px rgb(0, 191, 255);
-    
 }
 .cardsWonPlayer {  
     display: grid;
@@ -219,26 +256,30 @@ button:active {
     justify-content: center;
     align-content: center;
     text-align: center;
-    border: red 1px solid;
+    /* border: red 1px solid; */
     height: 430px;
     width: 300px;
     align-content:space-evenly;
-
 }
 #Displaybox {
     display: grid;
-    border: purple 1px solid;
+    /* border: purple 1px solid; */
     height: 100px;
     width: 250px;
-    color: #ffffff;
+    color: black;
     justify-self: center;
     align-content: center;
     margin: 0 auto;
     font-size: 30px;
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px red,
+    0 0 21px red,
+    0 0 70px red
 }
 #gameStatus {
     display: grid;
-    border: purple 1px solid;
+    /* border: purple 1px solid; */
     height: 100px;
     width: 250px;
     color: #ffffff;
@@ -246,8 +287,29 @@ button:active {
     align-content: center;
     margin: 0 auto;
     font-size: 30px;
+    color: #fff;
+    /* text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px rgb(0, 225, 255),
+        0 0 82px rgb(0, 225, 255); */
+    text-shadow: 
+    0 0 7px #ffffff,
+    0 0 15px rgb(255, 255, 255),
+    0 0 25px rgb(255, 255, 255),
+    0 0 40px rgb(0, 191, 255);
 }
-
+/* #deal{
+    
+} */
+#deal:hover  {
+    box-shadow: 
+    0 0 7px #ffffff,
+    0 0 15px rgb(255, 255, 255),
+    0 0 20px rgb(0, 191, 255);
+    border: 1px solid #fff;
+}
 #RESTART{
     justify-content: center;
 }
