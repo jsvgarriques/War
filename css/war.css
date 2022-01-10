@@ -142,7 +142,22 @@ button:active {
     0 0 15px rgb(255, 255, 255),
     0 0 25px rgb(255, 255, 255),
     0 0 30px red;
-}
+    animation-name: brightenComputerDisplayBox;
+    animation-duration: 5s; 
+    animation-iteration-count: infinite;
+    }
+@keyframes brightenComputerDisplayBox {
+    0%   {box-shadow:0 0 7px #ffffff}
+    25%   {box-shadow:0 0 7px #ffffff,
+                    0 0 15px #ffffff,
+                    0 0 25px #ffffff,
+                    0 0 80px red;}
+    50%  {box-shadow: 0 0 7px #ffffff,
+                        0 0 15px #ffffff;}
+    100%  {box-shadow: 0 0 7px #ffffff,
+                        0 0 15px red;}
+  }
+
 .cardsWonComputer { 
     display: grid;
     /* border:1px rgb(255, 255, 255) solid; */
@@ -215,7 +230,7 @@ button:active {
     box-shadow: 
     0 0 7px #ffffff,
     0 0 15px #ffffff,
-    0 0 20px #fa0000
+    0 0 20px #fa0000;
 }
 .playerelements { 
     flex-direction: row;
@@ -234,6 +249,24 @@ button:active {
     0 0 15px rgb(255, 255, 255),
     0 0 25px rgb(255, 255, 255),
     0 0 30px rgb(0, 191, 255);
+    animation-name: brightenPlayerDisplayBox;
+    animation-duration: 5s; 
+    animation-iteration-count: infinite;
+}
+@keyframes brightenPlayerDisplayBox {
+0%   {box-shadow:0 0 7px #ffffff,
+                0 0 15px #fff
+                0 0 30px #fff;}
+25%   {box-shadow:0 0 7px #ffffff,
+                0 0 15px #ffffff,
+                0 0 25px #ffffff,
+                0 0 80px rgb(0, 191, 255);}
+50%  {box-shadow: 0 0 7px #ffffff,
+                    0 0 15px #ffffff;}
+100%  {box-shadow: 0 0 7px #ffffff,
+    0 0 15px #ffffff,
+    0 0 25px #ffffff,
+    0 0 80px rgb(0, 191, 255)};
 }
 .displayboxPlayer{
     display: flex;
@@ -337,11 +370,11 @@ button:active {
     0 0 15px #ffffff,
     0 0 25px #ffffff,
     0 0 40px #ffffff;
-    animation-name: brighten;
+    animation-name: brightenGameStatus;
     animation-duration: 5s; 
     animation-iteration-count: infinite;
 }
-@keyframes brighten {
+@keyframes brightenGameStatus {
     0%   {text-shadow:0 0 7px #ffffff}
     25%   {text-shadow:0 0 7px #ffffff,
                     0 0 15px #ffffff,
@@ -350,7 +383,7 @@ button:active {
     50%  {text-shadow: 0 0 7px #ffffff,
                         0 0 15px #ffffff;}
     100%  {text-shadow: 0 0 7px #ffffff,
-                        0 0 15px #ffffff;}
+                        0 0 80px #ffffff;}
   }
 /* #deal{
     
