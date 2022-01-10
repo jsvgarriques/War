@@ -47,42 +47,25 @@ body {
     width: 800px;
     justify-content: space-between;
     padding: 50px;
-    /* text-shadow:
-        0 0 7px #fff,
-        0 0 10px #fff,
-        0 0 21px #fff,
-        0 0 42px rgb(0, 225, 255),
-        0 0 82px rgb(0, 225, 255); */
     box-shadow: 
     0 0 7px #ffffff,
     0 0 15px #ffffff,
     0 0 25px #ffffff,
     0 0 40px #ffffff;
     animation-name: border;
-    animation-duration: 10s;
+    animation-duration: 5s;
     animation-iteration-count: infinite;
 }
 @keyframes border {
-0%   {box-shadow: 
-0 0 7px #ffffff,
-0 0 15px #ffffff;}
-25%  {box-shadow: 
-    0 0 7px #ffffff,
-    0 0 15px rgb(255, 255, 255),
-    0 0 25px rgb(255, 255, 255),
-    0 0 30px #ffffff;}
-50%  {box-shadow: 
-    0 0 7px #ffffff,
-    0 0 15px #ffffff;}
-75% {box-shadow: 
-    0 0 7px #ffffff,
-    0 0 15px rgb(255, 255, 255),
-    0 0 25px rgb(255, 255, 255),
-    0 0 30px #ffffff}
-100% { box-shadow: 
-    0 0 7px #ffffff,
-    0 0 15px #ffffff;   
-    }
+    0%   {box-shadow:0 0 7px #ffffff}
+    25%  {box-shadow:0 0 7px #ffffff,
+                    0 0 15px #ffffff,
+                    0 0 25px #ffffff,
+                    0 0 80px #ffffff;}
+    50%  {box-shadow: 0 0 7px #ffffff,
+                        0 0 15px #ffffff;}
+    100% {box-shadow: 0 0 7px #ffffff,
+                        0 0 15px #ffffff};
 }
 button { 
     display: grid;
@@ -246,27 +229,23 @@ button:active {
     0 0 82px rgb(0, 225, 255);
     box-shadow: 
     0 0 7px #ffffff,
-    0 0 15px rgb(255, 255, 255),
-    0 0 25px rgb(255, 255, 255),
+    0 0 15px #ffffff,
+    0 0 25px #ffffff,
     0 0 30px rgb(0, 191, 255);
     animation-name: brightenPlayerDisplayBox;
     animation-duration: 5s; 
     animation-iteration-count: infinite;
 }
 @keyframes brightenPlayerDisplayBox {
-0%   {box-shadow:0 0 7px #ffffff,
-                0 0 15px #fff
-                0 0 30px #fff;}
-25%   {box-shadow:0 0 7px #ffffff,
-                0 0 15px #ffffff,
-                0 0 25px #ffffff,
-                0 0 80px rgb(0, 191, 255);}
-50%  {box-shadow: 0 0 7px #ffffff,
-                    0 0 15px #ffffff;}
-100%  {box-shadow: 0 0 7px #ffffff,
-    0 0 15px #ffffff,
-    0 0 25px #ffffff,
-    0 0 80px rgb(0, 191, 255)};
+    0%   {box-shadow:0 0 7px #ffffff}
+    25%   {box-shadow:0 0 7px #ffffff,
+                    0 0 15px #ffffff,
+                    0 0 25px #ffffff,
+                    0 0 80px rgb(0, 191, 255);}
+    50%  {box-shadow: 0 0 7px #ffffff,
+                        0 0 15px #ffffff;}
+    100%  {box-shadow: 0 0 7px #ffffff,
+                        0 0 15px rgb(0, 191, 255)};
 }
 .displayboxPlayer{
     display: flex;
