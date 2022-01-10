@@ -1,5 +1,5 @@
 html {
-    background-image: url(/Users/jay/sei/projects/WAR/Images/warimage.jpeg);
+    background-image: url(/Users/jay/sei/projects/WAR/Images/stand-off.jpeg);
     background-size: cover;
 }
 .topBar { 
@@ -41,7 +41,7 @@ body {
 .Table {
     display: flex;
     background-color: transparent;
-    border: 2px black solid;
+    border: 2px #fff solid;
     border-radius: 3px;
     height: 400px;
     width: 800px;
@@ -71,12 +71,14 @@ button {
     margin: 0 auto;
     cursor: pointer;
     align-items: center;
-    border: #ffffff 1px solid
+    border:none;
 }
 #pulls_card { 
     margin-top: 40px;
 }
 button:hover  {
+    border: #ffffff 1px solid;
+    border-radius: 2px;
     text-shadow: 
     0 0 7px #ffffff,
     0 0 15px rgb(255, 255, 255),
@@ -109,7 +111,7 @@ button:active {
     0 0 21px #fff,
     0 0 42px #ffffff,
     0 0 82px #ffffff;
-    border: 1px black solid;
+    border: 1px #ffffff solid;
     box-shadow: 
     0 0 7px #ffffff,
     0 0 15px rgb(255, 255, 255),
@@ -119,17 +121,16 @@ button:active {
 .cardsWonComputer { 
     display: grid;
     /* border:1px rgb(255, 255, 255) solid; */
-    height: 100px;
+    height: 40px;
     width: 150px;
     margin: 5px;
     background-color: none;
     border-radius: 3px;
-    color: black;
+    color: #ffffff;
     font-size: 30px;
-    padding: 10px;
     align-content: center;
-    justify-content: center;
-    font-size: 50px;
+    justify-items: center;
+    font-size: 30px;
     text-shadow: 
         0 0 7px #ffffff,
         0 0 15px #ffffff,
@@ -143,7 +144,7 @@ button:active {
 }
 #crank {
     padding: 5px;
-    color: black;
+    color: #ffffff;
     text-shadow: 
         0 0 7px #ffffff,
         0 0 15px #fa0000,
@@ -151,7 +152,7 @@ button:active {
     font-size: 25px;
 }
 #csuit  { 
-    color: black;
+    color: #ffffff;
     text-shadow: 
         0 0 7px #ffffff,
         0 0 15px #ffffff,
@@ -176,7 +177,7 @@ button:active {
 }
 .computers_card { 
     display: grid;
-    border: 2px black solid;
+    border: 2px #ffffff solid;
     height: 150px;
     width: 100px;
     margin: 5px;
@@ -210,17 +211,34 @@ button:active {
     0 0 30px rgb(0, 191, 255);
 }
 .displayboxPlayer{
-    color: black;
-    display: grid;
+    display: flex;
+    border: none;
     justify-content: center;
+    align-content: center;
+    font-size:40px;
+    margin:0 auto;
+    color: #fff;
+    text-shadow: 
+    0 0 7px #ffffff,
+    0 0 15px rgb(255, 255, 255),
+    0 0 20px rgb(0, 191, 255);
+    font-size: 20px;
     margin: 5px;
-    
- 
 }
 .displayboxcomputer {
-    color: black;
-    display: grid;
+    display: flex;
+    border: none;
     justify-content: center;
+    align-content: center;
+    font-size:40px;
+    margin:0 auto;
+    color: #fff;
+    text-shadow: 
+    0 0 7px #ffffff,
+    0 0 15px rgb(255, 255, 255),
+    0 0 20px red;
+    font-size: 20px;
+    margin: 5px;
     margin: 5px;
 }
 .players_card { 
@@ -241,19 +259,16 @@ button:active {
     0 0 20px rgb(0, 191, 255);
 }
 .cardsWonPlayer {  
-    display: grid;
+    display:grid;
     /* border:1px rgb(255, 255, 255) solid; */
-    height: 100px;
+    height: 40px;
     width: 150px;
     margin: 5px;
-    background-color: none;
     border-radius: 3px;
     color: #ffffff;
     font-size: 30px;
-    padding: 10px;
     align-content: center;
-    justify-content: center;
-    font-size: 50px;
+    justify-items: center;
 }
 .center_box { 
     display: grid;
@@ -310,4 +325,36 @@ button:active {
 }
 #RESTART{
     justify-content: center;
+}
+#inWarCardComputer { 
+    display: flex;
+    border: none;
+    width: 120px;
+    height: 75px;
+    justify-content: right;
+    align-content: center;
+    font-size:40px;
+    margin: 0 auto;
+    color: #ffffff;
+    text-shadow: 
+     0 0 7px #ffffff,
+    0 0 15px #ffffff,
+    0 0 20px #fa0000;
+    font-size: 40px;
+}
+#inWarCardPlayer {  
+    display: flex;
+    border: none;
+    width: 120px;
+    height: 75px;
+    justify-content: left;
+    align-content: center;
+    font-size:40px;
+    margin:0 auto;
+    color: #fff;
+    text-shadow: 
+    0 0 7px #ffffff,
+    0 0 15px rgb(255, 255, 255),
+    0 0 20px rgb(0, 191, 255);
+    font-size: 40px;
 }

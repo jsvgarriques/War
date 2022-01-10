@@ -8,8 +8,9 @@
 //     }
 // -----VARIABLES-----
 let playerCardsArray =[], computerCardsArray = [];//testing format
-let playerWarCard , computerWarCard;
-let playerDiscardPile =[], computerDiscardPile=[];
+let playerWarCard , computerWarCard, playerInWarCard, computerInWarCard;
+let playerDiscardPile =[], computerDiscardPile =[], playerInWarCardsArray =[],
+computerInWarCardsArray =[];
 // ---------button--------
 const restartButton= document.querySelector('#Restart');
 const playsCardButton = document.querySelector('#pulls_card');
@@ -21,25 +22,31 @@ const computers_card = document.querySelector('.computers_card');
 const cardsWonComputer= document.querySelector('.cardsWonComputer');
 const cardCountComputer= document.querySelector('.cardCountComputer');
 const computerElementsBox = document.querySelector('computerelements');
+let computerRank=  document.querySelector('#crank');
+let computerSuit = document.querySelector("#csuit");
+let computerWarCardRank=document.querySelector('#cwarcardrank')
+let computerWarCardSuit=document.querySelector('#cwarcardsuit')
 // ----------playerstuff---------------
 let players_deck = document.querySelector('.players_deck');
 let cardsWonPlayer= document.querySelector('.cardsWonPlayer');
 let cardcountplayer= document.querySelector('cardcountplayer');
 let playerElementsBox = document.querySelector('playerelements');
+let playerRank= document.querySelector('#prank');
+let playerSuit= document.querySelector('#psuit');
+let playerWarCardRank=document.querySelector('#pwarcardrank')
+let playerWarCardSuit=document.querySelector('#pwarcardsuit')
 // ---------gamestatusbox------------
 let gameStatus = document.querySelector('#gameStatus');
 // ---------querySelector------------
-let computerRank=  document.querySelector('#crank');
-let playerRank= document.querySelector('#prank');
-let computerSuit = document.querySelector("#csuit");
-let playerSuit= document.querySelector('#psuit');
+
+
 // --------connectToButton--------
 playsCardButton.addEventListener('click',playCard);
 restartButton.addEventListener('click' , reload);
 dealsCardButton.addEventListener('click', dealCards);
 // -------------DECK------------
 const suits = ["♥","♦","♣","♠"];
-const ranks = ['A','2','3','4','5','6','7','8','9','10','J','Q','K'];
+const ranks = ['2','3','4','5','6','7','8','9','10','J','Q','K','A'];
 let deck = [];
 // let playerHand=playerCards
 // let computerhand=computerCards
@@ -70,9 +77,11 @@ createDeck()//invoking
 // let shuffledDeck = createDeck()
 // --------SPLITS DECK AND DEALS CARDS-------
 function dealCards(){
-      playerCardsArray = (deck.splice(0,26)) //link to the html of the card count
-      computerCardsArray  = (deck.splice(0,26))
-      gameStatus.innerText = "Play a card"//link this to the html of the carcount
+    playerCardsArray = (deck.splice(0,26)) //link to the html of the card count
+    computerCardsArray  = (deck.splice(0,26))
+    gameStatus.innerText = "Play a card"//link this to the html of the carcount
+    cardsWonComputer.innerText=computerCardsArray.length;
+    cardsWonPlayer.innerText=playerCardsArray.length;
     // console.log(playerCardsArray, playerCards, computerCardsArray, computerCards);
 // its not stored anywhere 
  }
@@ -87,11 +96,11 @@ function playCard (){
     cardsWonComputer.innerText=computerCardsArray.length;
     cardsWonPlayer.innerText=playerCardsArray.length;
     computerRank.innerText=computerWarCard.rank;
-    playerRank.innerText=playerWarCard.rank;
     computerSuit.innerText=computerWarCard.suit;
+    playerRank.innerText=playerWarCard.rank;
     playerSuit.innerText=playerWarCard.suit;
     // console.log(playerWarCard.suit)
-    compareCards()
+    compareCards();//insert timeout function
     } else {
      pullFromDiscard();
      winnerOfGame();
@@ -110,19 +119,52 @@ function compareCards() {
             // console.log(computerDiscardPile)
             ;
     } else {
+        // -----I need to make this a function-----
             gameStatus.innerText = "It's Draw";
-            playerDiscardPile.push(playerWarCard); computerDiscardPile.push(computerWarCard)//draw means each card goes to respective discard pile
+            // playerDiscardPile.push(playerWarCard); computerDiscardPile.push(computerWarCard),//draw means each card goes to respective discard pile
+                playerInWarCardsArray = playerCardsArray.splice(0,4),
+                computerInWarCardsArray = computerCardsArray.splice(0,4)
+                console.log(computerInWarCardsArray, playerInWarCardsArray);
+                playerInWarCard = playerInWarCardsArray.shift()
+                computerInWarCard = computerInWarCardsArray.shift()
+                console.log(computerInWarCard, playerInWarCard)
+                playerWarCardRank.innerText=playerInWarCard.rank;
+                playerWarCardSuit.innerText=playerInWarCard.suit;
+                computerWarCardRank.innerText=computerInWarCard.rank;
+                computerWarCardSuit.innerText=computerInWarCard.suit;
+                // -----timer-----
+                setInterval(() => {
+                if(
+                    computerInWarCard.rank > playerInWarCard.rank){
+                    gameStatus.innerText= "Computer has won the War",
+                computerDiscardPile.push(computerInWarCard,
+                    computerInWarCardsArray,playerInWarCard,playerInWarCardsArray)}
+                    else if(
+                        playerInWarCard.rank > computerInWarCard.rank){
+                            playerDiscardPile.push(computerInWarCard,
+                            computerInWarCardsArray,playerInWarCard,playerInWarCardsArray),
+                             gameStatus.innerText ="Player has won the war"}
+                            else {gameStatus.innerText= 'Its another draw'}
+                        }, 2000);
+                
         }
     
 };
 // --------pullFromDiscardPile--------
 function pullFromDiscard() { 
     if (playerDiscardPile !== 0 && computerDiscardPile !== 0) {
-            playerCardsArray = playerDiscardPile.splice(0, playerDiscardPile.length) //playerCardsArray = (deck.splice(0,26))
-            computerCardsArray = computerDiscardPile.splice(0, computerDiscardPile.length)
+            playerCardsArray = playerDiscardPile.splice(0, playerDiscardPile.length),
+             //playerCardsArray = (deck.splice(0,26))
+            computerCardsArray = computerDiscardPile.splice(0, computerDiscardPile.length);
         } winnerOfGame();
+        // alert('you have used your discard deck');
     };
-
+// -------goToWarFunction-------
+// function goToWar (){ 
+//     playerInWarCardArray = playerCardsArray.splice(0,4),
+//     computerInWarCard = computerCardsArray.splice(0,4)
+//     console.log(computerInWarCard,computerInWarCard)
+// }
 // -------winnerOfGame-------
 function winnerOfGame() {
     if (playerDiscardPile === 0 && playerCardsArray === 0 ){
