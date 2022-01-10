@@ -58,6 +58,31 @@ body {
     0 0 15px #ffffff,
     0 0 25px #ffffff,
     0 0 40px #ffffff;
+    animation-name: border;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+@keyframes border {
+0%   {box-shadow: 
+0 0 7px #ffffff,
+0 0 15px #ffffff;}
+25%  {box-shadow: 
+    0 0 7px #ffffff,
+    0 0 15px rgb(255, 255, 255),
+    0 0 25px rgb(255, 255, 255),
+    0 0 30px #ffffff;}
+50%  {box-shadow: 
+    0 0 7px #ffffff,
+    0 0 15px #ffffff;}
+75% {box-shadow: 
+    0 0 7px #ffffff,
+    0 0 15px rgb(255, 255, 255),
+    0 0 25px rgb(255, 255, 255),
+    0 0 30px #ffffff}
+100% { box-shadow: 
+    0 0 7px #ffffff,
+    0 0 15px #ffffff;   
+    }
 }
 button { 
     display: grid;
@@ -86,7 +111,7 @@ button:hover  {
     box-shadow: 
     0 0 7px #ffffff,
     0 0 15px rgb(255, 255, 255),
-    0 0 20px rgb(0, 191, 255);
+    0 0 20px rgb(255, 255, 255);
     border: 1px solid #fff;
 }
 button:active {
@@ -95,7 +120,7 @@ button:active {
     0 0 10px #fff,
     0 0 21px #fff,
     0 0 42px #fff,
-    0 0 82px rgb(0, 225, 255)
+    0 0 82px rgb(0, 225, 255);
 }
 /* .deal {
     justify-content: center;
@@ -312,7 +337,21 @@ button:active {
     0 0 15px #ffffff,
     0 0 25px #ffffff,
     0 0 40px #ffffff;
+    animation-name: brighten;
+    animation-duration: 5s; 
+    animation-iteration-count: infinite;
 }
+@keyframes brighten {
+    0%   {text-shadow:0 0 7px #ffffff}
+    25%   {text-shadow:0 0 7px #ffffff,
+                    0 0 15px #ffffff,
+                    0 0 25px #ffffff,
+                    0 0 80px #ffffff;}
+    50%  {text-shadow: 0 0 7px #ffffff,
+                        0 0 15px #ffffff;}
+    100%  {text-shadow: 0 0 7px #ffffff,
+                        0 0 15px #ffffff;}
+  }
 /* #deal{
     
 } */
