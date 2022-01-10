@@ -11,28 +11,32 @@ let playerCardsArray =[], computerCardsArray = [];//testing format
 let playerWarCard , computerWarCard;
 let playerDiscardPile =[], computerDiscardPile=[];
 // ---------button--------
-const restartButton= document.querySelector('#Restart')
-const playsCardButton = document.querySelector('#pulls_card')
-const dealsCardButton = document.querySelector("#deal")
+const restartButton= document.querySelector('#Restart');
+const playsCardButton = document.querySelector('#pulls_card');
+const dealsCardButton = document.querySelector("#deal");
 // -----declare global function-----
 pullFromDiscard();
 // -----------computerstuff------------
-const computers_card = document.querySelector('.computers_card')
-const cardsWonComputer= document.querySelector('.cardsWonComputer')
-const cardCountComputer= document.querySelector('.cardCountComputer')
-const computerElementsBox = document.querySelector('computerelements')
+const computers_card = document.querySelector('.computers_card');
+const cardsWonComputer= document.querySelector('.cardsWonComputer');
+const cardCountComputer= document.querySelector('.cardCountComputer');
+const computerElementsBox = document.querySelector('computerelements');
 // ----------playerstuff---------------
-let players_deck = document.querySelector('.players_deck')
-let cardsWonPlayer= document.querySelector('.cardsWonPlayer')
-let cardcountplayer= document.querySelector('cardcountplayer')
-let playerElementsBox = document.querySelector('playerelements')
+let players_deck = document.querySelector('.players_deck');
+let cardsWonPlayer= document.querySelector('.cardsWonPlayer');
+let cardcountplayer= document.querySelector('cardcountplayer');
+let playerElementsBox = document.querySelector('playerelements');
 // ---------gamestatusbox------------
-let gameStatus = document.querySelector('#gameStatus')
+let gameStatus = document.querySelector('#gameStatus');
 // ---------querySelector------------
-let computerRank=  document.querySelector('#crank')
-let playerRank= document.querySelector('#prank')
-let computerSuit = document.querySelector("#csuit")
-let playerSuit= document.querySelector('#psuit')
+let computerRank=  document.querySelector('#crank');
+let playerRank= document.querySelector('#prank');
+let computerSuit = document.querySelector("#csuit");
+let playerSuit= document.querySelector('#psuit');
+// --------connectToButton--------
+playsCardButton.addEventListener('click',playCard);
+restartButton.addEventListener('click' , reload);
+dealsCardButton.addEventListener('click', dealCards);
 // -------------DECK------------
 const suits = ["♥","♦","♣","♠"];
 const ranks = ['A','2','3','4','5','6','7','8','9','10','J','Q','K'];
@@ -72,8 +76,6 @@ function dealCards(){
     // console.log(playerCardsArray, playerCards, computerCardsArray, computerCards);
 // its not stored anywhere 
  }
-
-dealsCardButton.addEventListener('click', dealCards);
 // -----operatesTurnOverButton-----
 // makes sure html is updated with current board status
 function playCard (){
@@ -95,8 +97,7 @@ function playCard (){
      winnerOfGame();
     }
 }
-// --------connectToButton--------
-playsCardButton.addEventListener('click',playCard);
+
 // --------winnerOfTurn-------
 function compareCards() {
     // console.log(playerDiscardPile)
@@ -130,8 +131,10 @@ function winnerOfGame() {
             gameStatus.innerText = "You are Victorious!";
     }
 };
-
-
+// -------Reload------
+function reload(){
+    window.location.reload(true)
+};
 
 
 
