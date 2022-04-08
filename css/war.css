@@ -111,7 +111,8 @@ button:active {
 } */
 .computerelements { 
     flex-direction: row;
-    height: 350px;
+    height: 210px;
+    width : 350px;
     border-radius: 3px;
     text-shadow:
     0 0 7px #fff,
@@ -218,7 +219,8 @@ button:active {
 .playerelements { 
     flex-direction: row;
     border:#fff 1px solid;
-    height: 350px;
+    height: 210px;
+    width : 350px;
     border-radius: 3px;
     align-content: center;
     text-shadow:
@@ -292,6 +294,9 @@ button:active {
     font-size: 25px;
     box-shadow: 
     0 0 7px #ffffff,
+    0 0 15px rgb(255, 255, 255),
+    0 0 20px rgb(0, 191, 255);
+    background-color: 0 0 7px #ffffff,
     0 0 15px rgb(255, 255, 255),
     0 0 20px rgb(0, 191, 255);
 }
