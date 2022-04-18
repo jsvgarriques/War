@@ -32,8 +32,14 @@ let cardcountplayer= document.querySelector('cardcountplayer');
 let playerElementsBox = document.querySelector('playerelements');
 let playerRank= document.querySelector('#prank');
 let playerSuit= document.querySelector('#psuit');
-let playerWarCardRank=document.querySelector('#pwarcardrank')
-let playerWarCardSuit=document.querySelector('#pwarcardsuit')
+let playerWarCardRank1=document.querySelector('#pwarcardrank1')
+let playerWarCardSuit1=document.querySelector('#pwarcardsuit1')
+let playerWarCardRank2=document.querySelector('#pwarcardrank2')
+let playerWarCardSuit2=document.querySelector('#pwarcardsuit2')
+let playerWarCardRank3=document.querySelector('#pwarcardrank3')
+let playerWarCardSuit3=document.querySelector('#pwarcardsuit3')
+let playerWarCardRank4=document.querySelector('#pwarcardrank4')
+let playerWarCardSuit4=document.querySelector('#pwarcardsuit4')
 //      ---------gamestatusbox------------
 let gameStatus = document.querySelector('#gameStatus');
 //      ---------querySelector------------
@@ -101,8 +107,8 @@ function playCard (){
     // console.log(playerWarCard.suit)
     compareCards();//insert timeout function
     } else {
-     pullFromDiscard();
-     winnerOfGame();
+        pullFromDiscard();
+        winnerOfGame();
     }
 }
 
@@ -125,6 +131,8 @@ function compareCards() {
                 // console.log(computerInWarCardsArray, playerInWarCardsArray);
                 playerInWarCard = playerInWarCardsArray.shift()
                 computerInWarCard = computerInWarCardsArray.shift()
+                playerInWarCard = playerInWarCardsArray.shift()
+                computerInWarCard = computerInWarCardsArray.shift()
                 // console.log(computerInWarCard, playerInWarCard)
                 playerWarCardRank.innerText=playerInWarCard.rank;
                 playerWarCardSuit.innerText=playerInWarCard.suit;
@@ -140,7 +148,7 @@ function compareCards() {
                         playerInWarCard.rank > computerInWarCard.rank){
                             playerDiscardPile.push(computerInWarCard,
                             computerInWarCardsArray,playerInWarCard,playerInWarCardsArray),
-                             gameStatus.innerText ="Player has won the war"}
+                            gameStatus.innerText ="Player has won the war"}
                             else {gameStatus.innerText= 'Its another draw'}
                         }, 2000);
                 

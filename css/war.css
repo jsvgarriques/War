@@ -1,6 +1,6 @@
 html {
     background-image: url('../Images/stand-off.jpeg');
-    background-size: cover;
+    background-size:cover;
 }
 .topBar { 
     color: #ffffff;
@@ -264,6 +264,16 @@ button:active {
     font-size: 20px;
     margin: 5px;
 }
+
+.players_warcards { 
+    height: 70px;
+    width: 40px;
+    font-size: 30px;
+    border:#fff 1px solid;
+    border-radius: 3px;
+    margin-left: 5px;
+}
+
 .displayboxcomputer {
     display: flex;
     border: none;
@@ -375,7 +385,7 @@ button:active {
 #deal:hover  {
     box-shadow: 
     0 0 7px #ffffff,
-    0 0 15px r#ffffff,
+    0 0 15px #ffffff,
     0 0 20px rgb(0, 191, 255);
     border: 1px solid #fff;
 }
@@ -393,7 +403,7 @@ button:active {
     margin: 0 auto;
     color: #ffffff;
     text-shadow: 
-     0 0 7px #ffffff,
+    0 0 7px #ffffff,
     0 0 15px #ffffff,
     0 0 20px #fa0000;
     font-size: 40px;
@@ -401,7 +411,7 @@ button:active {
 #inWarCardPlayer {  
     display: flex;
     border: none;
-    width: 120px;
+    width: 200px;
     height: 75px;
     justify-content: left;
     align-content: center;
